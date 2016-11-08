@@ -5,6 +5,33 @@ html
   head
     meta(charset='utf-8')
     title #{title}
+    style.
+      body {
+        background-image: url(http://overwatch.nos.netease.com/1/assets/img/layout/blog/bg-news-index.jpg);
+        background-size: 2560px;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-color: #141516;
+        color:#f8f8f8 !important;
+      }
+      .table{
+        background-color:rgba(25,25,25,0.7)
+      }
+      .table-hover {
+        color: orangered;
+      }
+      .thumbnail{
+        height:326px
+      }
+      .nav-logo {
+        background-image: url("http://overwatch.nos.netease.com/1/images/v2/common/nav-logo-v2.png");
+        background-repeat: no-repeat;
+        width: 245px;
+        height: 62px;
+        background-position: 50%;
+        display: inline-block;
+      }
+
     include ./includes/head
   body
     include ./includes/header

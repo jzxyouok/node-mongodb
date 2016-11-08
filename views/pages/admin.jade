@@ -5,7 +5,8 @@ extends ../layout
 block content
   .container
     .row
-      form.form-horizontal(method="post",action="/admin/movie/new")
+      form.form-horizontal(method="post", action="/admin/movie/new")
+        input(type="hidden", name="movie[_id]", value=movie._id)
         .form-group
           label.col-sm-2.control-label(for="inputTitle")  电影名字
           .col-sm-9
@@ -23,13 +24,23 @@ block content
           .col-sm-9
             input#inputLanguage.form-control(type="text",name="movie[language]",value="#{movie.language}")
         .form-group
+          label.col-sm-2.control-label(for="inputPoster") 海报地址
+          .col-sm-9
+            input#inputPoster.form-control(type="text",name="movie[poster]",value=movie.poster)
+        .form-group
+          label.col-sm-2.control-label(for="inputFlash") 片源地址
+          .col-sm-9
+            input#inputFlash.form-control(type="text",name="movie[flash]",value=movie.flash)
+        .form-group
           label.col-sm-2.control-label(for="inputYear") 上映年份
           .col-sm-9
             input#inputYear.form-control(type="text",name="movie[year]",value="#{movie.year}")
         .form-group
-          label.col-sm-2.control-label(for="inputSummery") 简介
+          label.col-sm-2.control-label(for="inputSummary") 简介
           .col-sm-9
-            input#inputSummery.form-control(type="text",name="movie[summery]",value="#{movie.summery}")
-
+            input#inputSummary.form-control(type="text",name="movie[summary]",value="#{movie.summary}")
+        .form-group
+          .col-sm-offset-5.col-sm-6
+            button.btn.btn-warning.btn-lg.btn-default(type="submit") 录入
 
 

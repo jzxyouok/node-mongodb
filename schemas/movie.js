@@ -11,7 +11,7 @@ var MovieSchema=new mongoose.Schema({
     summary:String,
     flash:String,
     poster:String,
-    year:Number,
+    year:String,
     meta:{
         createAt:{
             type:Date,
@@ -39,13 +39,13 @@ MovieSchema.statics={
     fetch:function (cd) {
         return this
             .find({})
-            .sort('meta.updateAt');
-            exec(cd)
+            .sort('meta.updateAt')
+            .exec(cd)
     },
     findById:function (id,cd) {
         return this
-            .find({_id:id});
-            exec(cd)
+            .findOne({_id:id})
+            .exec(cd)
     }
 };
 
