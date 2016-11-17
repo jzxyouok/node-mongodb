@@ -1,0 +1,84 @@
+//
+   Created by Administrator on 2016/11/7.
+doctype
+html
+  head
+    meta(charset='utf-8')
+    title #{title}
+    style.
+      body {
+        background-image: url(http://overwatch.nos.netease.com/1/assets/img/layout/blog/bg-news-index.jpg);
+        background-size: 2560px;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-color: #141516;
+        color:#f8f8f8 !important;
+      }
+      .tablebox{
+        border-radius: 5px !important;
+      }
+      .table{
+        background-color:rgba(25,25,25,0.7)
+      }
+      .table-hover {
+        color: orangered;
+      }
+      .heightbox{
+        height:326px
+      }
+      .col-xs-7.heightbox{
+      | margin: 0 auto;
+      | min-width: 385 px;
+      |
+      }
+      .nav-logo {
+        background-image: url("http://overwatch.nos.netease.com/1/images/v2/common/nav-logo-v2.png");
+        background-repeat: no-repeat;
+        width: 245px;
+        height: 62px;
+        background-position: 50%;
+        display: inline-block;
+      }
+      .navbar{
+        background-color: #ffffff;
+        opacity: 0.5;
+      }
+      embed{
+        margin-bottom: 100px;
+      }
+      .navbar.navbar-brand {
+        color: #000;
+        opacity: 1;
+      }
+      .modal{
+        background-color:rgba(25,25,25,0.2);
+        color:#444;
+      }
+      .modal-content{
+        box-shadow: 0 15px 25px rgba(0,0,0,.8);
+        background-color:rgba(255,255,255,0.7);
+      }
+      .panel.panel-opacity{
+        background-color:rgba(25,25,25,0) !important;
+        margin-bottom: 100px;
+      }
+      .panel-body{
+        background-color:rgba(255,255,255,0.1);
+        border-radius: 3px;
+        min-height: 150px;
+      }
+      .media-body{
+        margin-bottom: 15px;
+      }
+      .ml{
+        width:80%;
+        margin-left: 50px;
+      }
+      .bm{
+        margin:8px 10px 0 0;
+      }
+
+    include includes/head
+  body
+    include includes/header
+    block content

@@ -1,0 +1,68 @@
+//
+   Created by Administrator on 2016/11/7.
+extends ../layout
+
+block content
+  .container
+    .row
+      .col-md-7.col-sm-10
+        embed(src="#{movie.flash}", allowFullScreen="true", quality="high",width="720", height="600", align="middle", type="application/x-shockwave-flash")
+      .col-md-4.col-md-offset-1.col-sm-10
+        dl.dl-horizontal
+          dt 电影名字
+          dd= movie.title
+          dt 导演
+          dd= movie.doctor
+          dt 国家
+          dd= movie.country
+          dt 语言
+          dd= movie.language
+          dt 上映年份
+          dd= movie.year
+          dt 简介
+          dd= movie.summary
+    .row
+      .col-md-8.col-sm-10
+        .panel.panel-opacity
+          .panel-heading
+            h3 评论区
+          .panel-body
+            ul.media
+              each item in comments
+                li.media
+                  .pull-left
+                    img.media-object(src='')
+                  .media-body
+                    h4.media-heading #{item.from.name}
+                    p #{item.content}
+                    a.comment.pull-right(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}") 回复
+                    if item.reply&&item.reply.length>0
+                      each reply in item.reply
+                        .media.ml.clearfix
+                          .pull-left
+                            img.media-object(src='')
+                          .media-body
+                            h4.media-heading
+                              | #{reply.from.name}
+                              span.text-info &nbsp;回复&nbsp;
+                              | #{reply.to.name} :
+                            p #{reply.content}
+                            a.comment.pull-right(href="#comments",data-cid="#{item._id}",data-tid="#{reply.from._id}") 回复
+                  hr
+          #comments
+            form#commentForm(method='POST',action='/user/comment')
+              input(type='hidden',name='comment[movie]',value='#{movie._id}')
+              if user
+                input(type='hidden',name='comment[from]',value='#{user._id}')
+              .form-group
+              if user
+                h4 勇敢的评论吧少年！
+                textarea.form-control(name='comment[content]',rows='5')
+                button.btn.pull-right.btn-warning(type='submit') 提交
+              else
+                h4 要评论先登录~
+                textarea.form-control(name='comment[content]',rows='4')
+                button.btn.pull-right.btn-warning.disabled(type='submit') 提交&nbsp;
+                a.navbar-link.text-warning.pull-right.bm(href="#",data-toggle='modal',data-target='#signinModal') 登录&nbsp;
+                a.navbar-link.text-warning.pull-right.bm(href="#",data-toggle='modal',data-target='#signupModal') 注册&nbsp;
+  script(src="/js/detail.js")

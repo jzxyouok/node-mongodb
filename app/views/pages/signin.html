@@ -1,0 +1,72 @@
+<!--Created by Administrator on 2016/11/7.--><!DOCTYPE html><html><head><meta charset="utf-8"><title></title><style>body {
+  background-image: url(http://overwatch.nos.netease.com/1/assets/img/layout/blog/bg-news-index.jpg);
+  background-size: 2560px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #141516;
+  color:#f8f8f8 !important;
+}
+.tablebox{
+  border-radius: 5px !important;
+}
+.table{
+  background-color:rgba(25,25,25,0.7)
+}
+.table-hover {
+  color: orangered;
+}
+.heightbox{
+  height:326px
+}
+.col-xs-7.heightbox{
+| margin: 0 auto;
+| min-width: 385 px;
+|
+}
+.nav-logo {
+  background-image: url("http://overwatch.nos.netease.com/1/images/v2/common/nav-logo-v2.png");
+  background-repeat: no-repeat;
+  width: 245px;
+  height: 62px;
+  background-position: 50%;
+  display: inline-block;
+}
+.navbar{
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+embed{
+  margin-bottom: 100px;
+}
+.navbar.navbar-brand {
+  color: #000;
+  opacity: 1;
+}
+.modal{
+  background-color:rgba(25,25,25,0.2);
+  color:#444;
+}
+.modal-content{
+  box-shadow: 0 15px 25px rgba(0,0,0,.8);
+  background-color:rgba(255,255,255,0.7);
+}
+.panel.panel-opacity{
+  background-color:rgba(25,25,25,0) !important;
+  margin-bottom: 100px;
+}
+.panel-body{
+  background-color:rgba(255,255,255,0.1);
+  border-radius: 3px;
+  min-height: 150px;
+}
+.media-body{
+  margin-bottom: 15px;
+}
+.ml{
+  width:80%;
+  margin-left: 50px;
+}
+.bm{
+  margin:8px 10px 0 0;
+}
+</style><!--Created by Administrator on 2016/11/7.--><link href="/libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"><script src="/libs/jquery/dist/jquery.min.js"></script><script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script></head><body><!--Created by Administrator on 2016/11/7.--><div class="container"><div class="row"><div class="page-header"><h1></h1><h4>大龄动画片爱好者</h4><div class="nav-logo"></div></div></div></div><div class="navbar navbar-default navbar-fixed-bottom"><div class="container"><div class="navbar-header"></div><a href="/" class="navbar-brand">这个世界需要更多的英雄~  登陆有福利哦</a><p class="navbar-text navbar-right"><a href="#" data-toggle="modal" data-target="#signupModal" class="navbar-link">注册</a><span>&nbsp;|&nbsp</span><a href="#" data-toggle="modal" data-target="#signinModal" class="navbar-link">登录</a></p></div></div><div id="signupModal" class="modal fade"><div class="modal-dialog modal-sm"><div class="modal-content"><form method="POST" action="/user/signup"><div class="modal-header"><h3>注册</h3></div><div class="modal-body"><div class="form-group"><label for="signupName">用户名</label><input id="signupName" name="user[name]" type="text" class="form-control"></div><div class="form-group"><label for="signupPassword">密码</label><input id="signupPassword" name="user[password]" type="password" class="form-control"></div></div><div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button type="submit" class="btn btn-warning">提交</button></div></form></div></div></div><div id="signinModal" class="modal fade"><div class="modal-dialog modal-sm"><div class="modal-content"><form method="POST" action="/user/signin"><div class="modal-header"><h3>登录</h3></div><div class="modal-body"><div class="form-group"><label for="signinName">用户名</label><input id="signinName" name="user[name]" type="text" class="form-control"></div><div class="form-group"><label for="signinPassword">密码</label><input id="signinPassword" name="user[password]" type="password" class="form-control"></div></div><div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button type="submit" class="btn btn-warning">提交</button></div></form></div></div></div><div class="container"><div class="row"><div class="col-md-5 center-block"><form method="POST" action="/user/signup"><div class="modal-header">注册</div><div class="modal-body"><div class="form-group"><label for="signupName">用户名</label><input id="signupName" name="user[name]" type="password" class="form-control"></div><div class="form-group"><label for="signupPassword">密码</label><input id="signupPassword" name="user[password]" type="text" class="form-control"></div></div><div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-default">关闭</button><button type="submit" class="btn btn-warning">提交</button></div></form></div></div></div></body></html>

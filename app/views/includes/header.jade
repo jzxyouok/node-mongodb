@@ -1,0 +1,57 @@
+//
+   Created by Administrator on 2016/11/7.
+.container
+  .row
+
+    .page-header
+       h1=title
+       h4 大龄动画片爱好者
+       .nav-logo
+.navbar.navbar-default.navbar-fixed-bottom
+  .container
+    .navbar-header
+    if user
+      a.navbar-brand(href='/') 你好！旅行者！
+      p.navbar-text.navbar-right
+        span WELCOME~~  #{user.name}桑~
+        span &nbsp;|&nbsp
+        a.navbar-link(href="/logout",) 登出
+    else
+      a.navbar-brand(href='/') 这个世界需要更多的英雄~  登陆有福利哦
+      p.navbar-text.navbar-right
+        a.navbar-link(href="#",data-toggle='modal',data-target='#signupModal') 注册
+        span &nbsp;|&nbsp
+        a.navbar-link(href="#",data-toggle='modal',data-target='#signinModal') 登录
+#signupModal.modal.fade
+  .modal-dialog.modal-sm
+    .modal-content
+      form(method='POST',action="/user/signup")
+        .modal-header
+          h3 注册
+        .modal-body
+          .form-group
+            label(for='signupName') 用户名
+            input#signupName.form-control(name="user[name]",type="text")
+          .form-group
+            label(for='signupPassword') 密码
+            input#signupPassword.form-control(name="user[password]",type="password")
+        .modal-footer
+          button.btn.btn-default(type="button",data-dismiss='modal') 关闭
+          button.btn.btn-warning(type="submit") 提交
+#signinModal.modal.fade
+    .modal-dialog.modal-sm
+        .modal-content
+            form(method='POST',action="/user/signin")
+                .modal-header
+                  h3 登录
+                .modal-body
+                    .form-group
+                        label(for='signinName') 用户名
+                        input#signinName.form-control(name="user[name]",type="text")
+                    .form-group
+                        label(for='signinPassword') 密码
+                        input#signinPassword.form-control(name="user[password]",type="password")
+                .modal-footer
+                    button.btn.btn-default(type="button",data-dismiss='modal') 关闭
+                    button.btn.btn-warning(type="submit") 提交
+

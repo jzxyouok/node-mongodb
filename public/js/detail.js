@@ -1,0 +1,32 @@
+/**
+ * Created by Administrator on 2016/11/14.
+ */
+$(function () {
+    $('.comment').click(function () {
+        var target = $(this);
+        var toId = target.data('tid');
+        var commentId = target.data('cid');
+        if ($('#toId').length > 0) {
+            $('#toid').val(toId)
+        }
+        else {
+            $('<input>').attr({
+                type: 'hidden',
+                id: 'toId',
+                name: 'comment[tid]',
+                value: toId
+            }).appendTo('#commentForm');
+        }
+        if ($('#commentId').length > 0) {
+            $('#commentId').val(commentId)
+        }
+        else {
+            $('<input>').attr({
+                type: 'hidden',
+                id: 'commentId',
+                name: 'comment[cid]',
+                value: commentId
+            }).appendTo('#commentForm')
+        }
+    });
+})
